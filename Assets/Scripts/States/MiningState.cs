@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MiningState : MinerState
+public class MiningState : State
 {
     private ResourceCounter _resourceCounter;
 

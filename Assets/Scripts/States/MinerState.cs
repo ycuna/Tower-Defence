@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class MinerState : MonoBehaviour
+public abstract class State : MonoBehaviour
 {
-    [SerializeField] private MinerTransition[] _transitions;
+    [SerializeField] private Transition[] _transitions;
 
     public void Enter()
     {
@@ -29,7 +29,7 @@ public abstract class MinerState : MonoBehaviour
         }
     }
 
-    public MinerState GetNextState()
+    public State GetNextState()
     {
         foreach(var transition in _transitions)
         {

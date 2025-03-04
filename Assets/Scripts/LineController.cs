@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DraggingState : State
+public class LineController : MonoBehaviour
 {
+    public int EnemiesAlive { get; set; }
     private void Update()
     {
         

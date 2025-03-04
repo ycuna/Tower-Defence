@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MinerStateMachine : MonoBehaviour
+public class StateMachine : MonoBehaviour
 {
-    [SerializeField] private MinerState _firstState;
+    [SerializeField] private State _firstState;
 
-    private MinerState _currentState;
+    private State _currentState;
 
     private void Start()
     {
@@ -20,12 +20,12 @@ public class MinerStateMachine : MonoBehaviour
         if (_currentState == null)
             return;
 
-        MinerState nextState = _currentState.GetNextState();
+        State nextState = _currentState.GetNextState();
         if (nextState != null)
             SwitchState(nextState);
     }
 
-    private void SwitchState(MinerState nextState)
+    private void SwitchState(State nextState)
     {
         if (_currentState != null)
             _currentState.Exit();

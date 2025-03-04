@@ -2,18 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class MinerTransition : MonoBehaviour
+public abstract class Transition : MonoBehaviour
 {
-    [SerializeField] private MinerState _nextState;
+    [SerializeField] private State _nextState;
 
     public bool NeedSwitch { get; protected set; }
 
-    public MinerState NextState
+    public State NextState
     {
         get => _nextState;
     }
 
     private void OnEnable()
+    {
+        NeedSwitch = false;
+    }
+
+    private void OnDisable()
     {
         NeedSwitch = false;
     }
