@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8457064042656704633}
   - component: {fileID: -1803721138945838545}
   - component: {fileID: -6373287043892533718}
+  - component: {fileID: 5528783694789176757}
   m_Layer: 0
   m_Name: Cube Prefab
   m_TagString: Untagged
@@ -107,12 +108,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.9993335, y: 1, z: 1}
+  m_Center: {x: -0.00033314526, y: 0, z: 0}
 --- !u!114 &-4581981500740027069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buildingSize: {x: 2, y: 2}
   _renderer: {fileID: 4767399023516306322}
+  _maxHealth: 5
 --- !u!114 &-1825898706271191328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,3 +182,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transitions: []
+--- !u!54 &5528783694789176757
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6288129859880946488}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0

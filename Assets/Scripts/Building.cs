@@ -6,8 +6,16 @@ public class Building : MonoBehaviour
 {
     [SerializeField] private Vector2 _buildingSize;
     [SerializeField] private Renderer _renderer;
+    [SerializeField] private int _maxHealth;
+
+    public int CurrentHealth { get; private set; }
 
     public Vector2 BuildingSize { get => _buildingSize; set {; } }
+
+    private void Awake()
+    {
+        CurrentHealth = _maxHealth;
+    }
 
     public void SetColor(bool isAvailableToBuild)
     {
@@ -22,5 +30,16 @@ public class Building : MonoBehaviour
         _renderer.material.color = Color.white;
     }
 
-    
+    public void ReceiveDamage(int damage)
+    {
+        CurrentHealth -= damage;
+        if (CurrentHealth < 1)
+            DestroyBuilding();
+    }
+
+    private void DestroyBuilding()
+    {
+        Destroy(this.gameObject);
+    }
+
 }

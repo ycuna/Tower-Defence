@@ -51,6 +51,7 @@ GameObject:
   - component: {fileID: 8642973278478717161}
   - component: {fileID: -7981348822677888012}
   - component: {fileID: 1252845077046879986}
+  - component: {fileID: 8872177834343722312}
   m_Layer: 0
   m_Name: Sphere Prefab
   m_TagString: Untagged
@@ -142,7 +143,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -162,6 +163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buildingSize: {x: 2, y: 2}
   _renderer: {fileID: 1923253043400827356}
+  _maxHealth: 5
 --- !u!114 &-829504598105408495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,3 +260,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nextState: {fileID: -4937466873438133987}
+--- !u!54 &8872177834343722312
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6652635626424634275}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0

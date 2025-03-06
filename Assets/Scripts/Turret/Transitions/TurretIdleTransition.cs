@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TurretIdleTransition : Transition
 {
-    private LineController _lineController;
+    private LineEnemyDetector _lineController;
 
     private WaveSpawner _waveSpawner;
 
