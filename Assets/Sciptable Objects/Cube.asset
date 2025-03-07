@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c8e929322df2e6438f912d9bf3c57a7, type: 3}
   m_Name: Cube
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 1571032212639168507, guid: 74fda4976bef4a24e991bfad1d542224, type: 3}
   prefab: {fileID: 6288129859880946488, guid: 1db877394dc23264b82a9379230a64f2, type: 3}
   cost: 3

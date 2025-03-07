@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class CardHolderManager : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class CardHolderManager : MonoBehaviour
     private int _cost;
     private Sprite _icon;
 
+    [SerializeField] private ResourceCounter _resourceCounter;
+
     void Start()
     {
         _cardsAmmount = _cardSO.Length;
@@ -24,6 +27,10 @@ public class CardHolderManager : MonoBehaviour
 
         for (int i = 0; i < _cardsAmmount; i++)
             CreateCard(i);
+
+        GameEvents.Instance.onResourcesCountChanged += OnResourcesCountChanged;
+
+        OnResourcesCountChanged();
     }
 
     private void CreateCard(int i)
@@ -40,6 +47,25 @@ public class CardHolderManager : MonoBehaviour
 
         card.GetComponentInChildren<SpriteRenderer>().sprite = _icon;
         card.GetComponentInChildren<TMP_Text>().text = _cost.ToString();
+    }
+
+    private void OnResourcesCountChanged()
+    {
+        for(int i = 0; i < _cardsAmmount; i++)
+        {
+            if (_cardSO[i].cost > _resourceCounter.Resources)
+            {
+                _plantedCards[i].transform.GetChild(1).GetComponent<SpriteRenderer>().color = new Color(132, 132, 132, 255);
+                _plantedCards[i].GetComponent<Image>().color = Color.gray;
+                _plantedCards[i].GetComponent<CardManager>().IsAbleToPlant = false;
+            }
+            else
+            {
+                _plantedCards[i].transform.GetChild(1).GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 255);
+                _plantedCards[i].GetComponent<Image>().color = Color.white;
+                _plantedCards[i].GetComponent<CardManager>().IsAbleToPlant = true;
+            }
+        }
     }
 }
 

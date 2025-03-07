@@ -420,6 +420,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2fbe8682403f62f4786d20aba1878d94, type: 2}
   - {fileID: 11400000, guid: 6a841e6a078cf4e4d818da047cf89415, type: 2}
   _plantedCards: []
+  _resourceCounter: {fileID: 1112200768}
 --- !u!1 &369381882
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,6 +1040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _resources: 0
+  _startResources: 15
   _recourcesText: {fileID: 1112200766}
 --- !u!1 &1323527217
 GameObject:
@@ -1139,6 +1141,7 @@ GameObject:
   - component: {fileID: 1658310411}
   - component: {fileID: 1658310410}
   - component: {fileID: 1658310409}
+  - component: {fileID: 1658310412}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1207,6 +1210,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1658310412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658310408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92e5a4bab7e1564eb46f00a0106ce0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1750764077
 GameObject:
   m_ObjectHideFlags: 0
