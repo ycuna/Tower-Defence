@@ -33,8 +33,7 @@ public class CardManager : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
     }
     public void OnDrag(PointerEventData eventData)
     {
-        if (IsAbleToPlant)
-        {
+        
             if (_draggingBuilding != null)
             {
                 var groundPlane = new Plane(Vector3.up, Vector3.zero);
@@ -61,14 +60,13 @@ public class CardManager : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
 
                     _building.SetColor(_isAvailableToBuild);
                 }
-            }
+            
         }        
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (IsAbleToPlant)
-        {
+        
             _draggingBuilding = Instantiate(_cardSO.prefab, Vector3.zero, Quaternion.identity);
 
             _building = _draggingBuilding.GetComponent<Building>();
@@ -83,7 +81,7 @@ public class CardManager : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
                 int z = Mathf.RoundToInt(worldPosition.z);
 
                 _draggingBuilding.transform.position = new Vector3(x, 0, z);
-            }
+            
 
             _draggingBuilding.GetComponent<BoxCollider>().enabled = false;
         }
@@ -91,7 +89,7 @@ public class CardManager : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (IsAbleToPlant) {
+        
             if (!_isAvailableToBuild)
                 Destroy(_draggingBuilding);
             else
@@ -105,7 +103,7 @@ public class CardManager : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
                 _resourceCounter.SpendResources(_cardSO.cost);
 
                 _draggingBuilding.GetComponent<BoxCollider>().enabled = true;
-            }
+            
         }
     }
 

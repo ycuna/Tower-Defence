@@ -277,6 +277,8 @@ GameObject:
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
   - component: {fileID: 330585548}
+  - component: {fileID: 330585550}
+  - component: {fileID: 330585549}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -421,6 +423,40 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6a841e6a078cf4e4d818da047cf89415, type: 2}
   _plantedCards: []
   _resourceCounter: {fileID: 1112200768}
+--- !u!114 &330585549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e08c33888c40824c903250a6df303c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _turret: {fileID: -6986170698551487490, guid: 919fb39fba1ad694ab4de196799c8817, type: 3}
+  _turretProjectile: {fileID: 2374404522248278193, guid: 6e5132d48868bdc438737c492758cec8, type: 3}
+  _miner: {fileID: -4581981500740027069, guid: 1db877394dc23264b82a9379230a64f2, type: 3}
+  _miningState: {fileID: -6373287043892533718, guid: 1db877394dc23264b82a9379230a64f2, type: 3}
+  _jsonController: {fileID: 330585550}
+--- !u!114 &330585550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e3c7bfee706cdf4699a594b5e147159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerStats:
+    _unlockedLevelsCount: 0
+    _coinsAmmount: 0
+    _turretLevel: 0
+    _minerLevel: 0
 --- !u!1 &369381882
 GameObject:
   m_ObjectHideFlags: 0

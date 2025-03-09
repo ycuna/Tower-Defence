@@ -11,6 +11,14 @@ public class JSONController : MonoBehaviour
     private void Awake()
     {
         GetStats();
+
+        if (_playerStats.TurretLevel == 0)
+        {
+            _playerStats.TurretLevel = 1;
+            _playerStats.MinerLevel = 1;
+
+            SaveStats();
+        }
     }
 
     public void GetStats()
@@ -38,4 +46,21 @@ public class Stats
         get { return _coinsAmmount; }
         set { _coinsAmmount = value; }
     }
+
+    [SerializeField] private int _turretLevel;
+
+    public int TurretLevel
+    {
+        get { return _turretLevel; }
+        set { _turretLevel = value; }
+    }
+
+    [SerializeField] private int _minerLevel;
+    
+    public int MinerLevel
+    {
+        get { return _minerLevel; }
+        set { _minerLevel = value; }
+    }
+    
 }

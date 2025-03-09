@@ -6,6 +6,8 @@ public class TurretProjectile : MonoBehaviour
     [SerializeField] private float _moveSpeed;
     [SerializeField] private int _damage;
 
+    public int Damage { get { return _damage; } set { _damage = value; } }
+
     private void Awake()
     {
         Destroy(this.gameObject, 5f);

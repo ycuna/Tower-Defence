@@ -11,6 +11,7 @@ public class Building : MonoBehaviour
 
     [SerializeField] private GameObject _healthBar;
     [SerializeField] private Image _healthBarImage;
+    public int MaxHealth { get { return _maxHealth; } set { _maxHealth = value; } }
 
     public int CurrentHealth { get; private set; }
 

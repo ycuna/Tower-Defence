@@ -5,6 +5,12 @@ using UnityEngine;
 public class MiningState : State
 {
     private ResourceCounter _resourceCounter;
+    [SerializeField] private int _miningSpeed;
+
+    public int MiningSpeed { 
+        get { return _miningSpeed; }
+        set { _miningSpeed = value; } 
+    }
 
     private void OnEnable()
     {
@@ -15,7 +21,7 @@ public class MiningState : State
     private IEnumerator Mine()
     {
         yield return new WaitForSeconds(2);
-        _resourceCounter.ReceiveResources(1);
+        _resourceCounter.ReceiveResources(MiningSpeed);
         StartCoroutine(Mine());
     }
 }
